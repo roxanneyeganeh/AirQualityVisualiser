@@ -19,8 +19,105 @@ let burstImages = {
 
 let slideOutVisibleInfo = false; // For "Show Info"
 let slideOutVisibleLearnMore = false; // For "Learn More"
-let slideOutTextInfo = "Air quality data is critical to understand the pollutants in the air we breathe. Monitor these values regularly for better health.";
-let slideOutTextLearnMore = `
+let slideOutTextInfo = `<style>
+  a[target="_blank"] {
+    color:#ff00d0; /* Set the color t
+    text-decoration: underline; /
+  }
+
+  /* Optional: hover effect to change the color when the link is hovered */
+  a[target="_blank"]:hover {
+    color:#FFFDE4; /* Darker blue when hovered */
+  }
+</style>
+<div style="font-family: 'Poppins', sans-serif;">
+
+  <div style="font-size:22px; font-weight:bold; margin-bottom: 40px; text-align: center;">
+    What Can I Do to Help?
+  </div>
+
+  <div style="font-weight: bold; font-size: 16px; margin-top: 20px;">Drive Less</div><br>
+  <div style="column-count: 2; column-gap: 20px; text-align: left; hyphens: none;">
+    One of the most effective ways to reduce air pollution is by minimizing the use of fossil fuel-powered vehicles. Opt for walking, biking, or using public transportation instead of driving. If possible, consider carpooling or switching to an electric vehicle. Every small choice in favor of alternative transportation reduces harmful emissions and helps protect our environment.
+  </div>
+
+  <br><br>
+  <div style="font-weight: bold; font-size: 16px; margin-top: 20px;">Use Energy-Efficient Appliances</div><br>
+  <div style="column-count: 2; column-gap: 20px; text-align: left; hyphens: none;">
+    By choosing energy-efficient appliances and lighting, such as LED bulbs, you reduce the demand for power generated from non-renewable resources. When not in use, make it a habit to turn off lights and electronics. Even small changes in the way you use energy at home can lead to a significant reduction in air pollution.
+  </div>
+
+  <br><br>
+  <div style="font-weight: bold; font-size: 16px; margin-top: 20px;">Switch to Renewable Energy</div><br>
+  <div style="column-count: 2; column-gap: 20px; text-align: left; hyphens: none;">
+    Transitioning to renewable energy sources, like solar or wind power, is crucial in reducing the harmful effects of burning fossil fuels. You can support this shift by advocating for renewable energy investments in your community or by switching to green energy providers when available. Every step towards cleaner energy sources helps lower overall pollution levels.
+  </div>
+
+  <br><br>
+  <div style="font-weight: bold; font-size: 16px; margin-top: 20px;">Reduce, Reuse, Recycle</div><br>
+  <div style="column-count: 2; column-gap: 20px; text-align: left; hyphens: none;">
+    Taking action to reduce waste, reuse materials, and recycle wherever possible helps cut down on manufacturing emissions and waste-related pollution. Choose products with minimal packaging, buy second-hand goods, and ensure that recyclable materials are processed properly. Every effort, no matter how small, contributes to a cleaner, less polluted environment.
+  </div>
+
+  <br><br>
+  <div style="font-weight: bold; font-size: 16px; margin-top: 20px;">Avoid Burning Wood & Trash</div><br>
+  <div style="column-count: 2; column-gap: 20px; text-align: left; hyphens: none;">
+    Open burning of wood, trash, and other materials releases harmful pollutants into the air. Similarly, smoking cigarettes significantly worsens both indoor and outdoor air quality. Avoid the practice of burning unnecessary materials and consider more sustainable alternatives for heating, such as electric heaters or cleaner fuels. Additionally, reducing smoking can have a profound positive impact on the air quality in your home and in your community.
+  </div>
+
+  <br><br>
+  <div style="font-weight: bold; font-size: 16px; margin-top: 20px;">Support Green Spaces</div><br>
+  <div style="column-count: 2; column-gap: 20px; text-align: left; hyphens: none;">
+    Creating and maintaining green spaces, like parks, community gardens, or tree planting initiatives, helps improve air quality by absorbing carbon dioxide and releasing oxygen. Trees also act as natural filters, removing pollutants from the air. By supporting or participating in tree planting efforts, you help promote cleaner, fresher air for everyone.
+  </div>
+
+  <br><br>
+  <div style="font-weight: bold; font-size: 16px; margin-top: 20px;">Raise Awareness</div><br>
+  <div style="column-count: 2; column-gap: 20px; text-align: left; hyphens: none;">
+    While taking action is crucial, raising awareness about air pollution is equally important. Educating others on the causes and consequences of pollution can help build a collective movement toward cleaner air. Share articles, infographics, and videos about air pollution and its effects on health and the environment. By starting conversations on platforms like Instagram, Facebook, or Twitter, you can inspire others to take meaningful actions in their own lives.
+  </div>
+
+  <br><br>
+  <div style="font-weight: bold; font-size: 16px; margin-top: 20px;">Engage with Community</div><br>
+  <div style="column-count: 2; column-gap: 20px; text-align: left; hyphens: none;">
+    Engaging with your community through local events, educational workshops, or awareness campaigns can have a profound impact on public understanding of air pollution. These events encourage people to make informed decisions in their daily lives and motivate them to take action for cleaner air. Whether through school programs, local meetups, or social groups, fostering awareness at the community level creates a larger collective effort.
+  </div>
+
+  <br><br>
+  <div style="font-weight: bold; font-size: 16px; margin-top: 20px;">Share Resources</div><br>
+  <div style="column-count: 2; column-gap: 20px; text-align: left; hyphens: none;">
+    Numerous organizations, including the <a href="https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health" target="_blank" style="text-decoration: underline; color: inherit;">World Health Organization (WHO)</a> and the <a href="https://www.unep.org/explore-topics/air-pollution" target="_blank" style="text-decoration: underline; color: inherit;">United Nations Environment Programme (UNEP)</a>, offer educational resources that explain the causes and consequences of air pollution in detail. By sharing these resources with others, you help educate the public on the importance of air quality and how it affects health and well-being.
+  </div>
+
+  <br><br>
+  <div style="font-weight: bold; font-size: 16px; margin-top: 20px;">Advocate for Policies</div><br>
+  <div style="column-count: 2; column-gap: 20px; text-align: left; hyphens: none;">
+    Encouraging lawmakers and local government officials to adopt stronger environmental policies is essential in the fight for cleaner air. Support policies that prioritize reducing emissions, promoting clean energy, and improving urban planning to reduce pollution. Advocacy at the local, state, and national levels can lead to lasting change, ensuring better air quality for future generations.
+  </div>
+
+  <br><br>
+  <div style="text-align: center; hyphens: none;">
+    Designed and Developed by <a href="https://designedbyroxanne.com/" target="_blank" rel="noopener noreferrer">Roxanne Yeganeh</a>
+  </div>
+
+</div>
+`;
+
+
+
+
+let slideOutTextLearnMore = `<style>
+  a[target="_blank"] {
+    color:#ff00d0; /* Set the color to blue (or any color of your choice) */
+    text-decoration: underline; /* Keeps the underline for links */
+  }
+
+  /* Optional: hover effect to change the color when the link is hovered */
+  a[target="_blank"]:hover {
+    color:#FFFDE4; /* Darker blue when hovered */
+  }
+</style>
+
 <div style="font-family: 'Poppins', sans-serif;">
 
   <div style="font-size:22px; font-weight:bold; margin-bottom: 40px; text-align: center;">
@@ -75,7 +172,7 @@ let slideOutTextLearnMore = `
   </div>
 <br><br>
    <div style="text-align: center; hyphens: none;">
-    Designed and Developed by <a href="https://roxanneyeganeh.com" target="_blank" rel="noopener noreferrer">Roxanne Yeganeh</a>
+    Designed and Developed by <a href="https://designedbyroxanne.com/" target="_blank" rel="noopener noreferrer">Roxanne Yeganeh</a>
 
   </div>
 
@@ -557,7 +654,7 @@ if (!(slideOutVisibleInfo || slideOutVisibleLearnMore)) {
     let y = (height - boxHeight) / 2;
 
     // Box
-    fill(255, 255, 255, 50);
+    fill(255, 255, 255, 100);
     stroke(255, 255);
     strokeWeight(2);
     rect(x, y, boxWidth, boxHeight, 20);
@@ -609,7 +706,7 @@ if (!(slideOutVisibleInfo || slideOutVisibleLearnMore)) {
     let y = (height - boxHeight) / 2;
 
     // Draw background for the box
-    fill(255, 255, 255, 50);
+    fill(255, 255, 255, 100);
     stroke(255);
     strokeWeight(2);
     rect(x, y, boxWidth, boxHeight, 20);
