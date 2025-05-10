@@ -270,45 +270,62 @@ function setup() {
     learnMoreButton.style('color', 'black'); // Reset to original text color
   });
 
-  // Create the toggle button aligned to the right
-  toggleButton = createButton("Our Planet's Future");
-  toggleButton.style('position', 'fixed');
-  toggleButton.style('right', '20px'); // Stick to right side
-  toggleButton.style('top', '14px');   // Adjust vertical position
-  toggleButton.style('background-color', '#FFFDE4');
-  toggleButton.style('font-family', 'Poppins')
-  toggleButton.style('color', 'black');
-  toggleButton.style('border', 'none');
-  toggleButton.style('border-radius', '70px');
-  toggleButton.style('padding', '5px 12px');
-  toggleButton.style('font-size', '14px');
-  toggleButton.style('white-space', 'nowrap');
-  toggleButton.style('overflow', 'hidden');
-  toggleButton.style('transition', 'all 0.3s ease');
-  toggleButton.style('transform-origin', 'right center'); // Expands from right edge
-  toggleButton.mousePressed(toggle2036);
+// Create the toggle button aligned to the right
+toggleButton = createButton("Our Planet's Future");  // Default text when 2036 is not visible
+toggleButton.style('position', 'fixed');
+toggleButton.style('right', '20px'); // Stick to the right side
+toggleButton.style('top', '14px');   // Adjust vertical position
+toggleButton.style('background-color', '#FFFDE4');
+toggleButton.style('font-family', 'Poppins');
+toggleButton.style('color', 'black');
+toggleButton.style('border', 'none');
+toggleButton.style('border-radius', '70px');
+toggleButton.style('padding', '5px 12px');
+toggleButton.style('font-size', '14px');
+toggleButton.style('white-space', 'nowrap');
+toggleButton.style('overflow', 'hidden');
+toggleButton.style('transition', 'all 0.3s ease');
+toggleButton.style('transform-origin', 'right center'); // Expands from right edge
+toggleButton.mousePressed(toggle2036);
 
-  // Expand on hover (text grows leftward)
-  toggleButton.mouseOver(() => {
-    toggleButton.html("2035 Predictions");
-    toggleButton.style('padding', '5px 20px');
-    toggleButton.style('background-color', '#ffffff');
-    toggleButton.style('color', '#000000');
-  });
-
-  // Collapse back
-  toggleButton.mouseOut(() => {
-    toggleButton.html("Our Planet's Future");
-    toggleButton.style('padding', '5px 12px');
-    toggleButton.style('background-color', '#FFFDE4');
-    toggleButton.style('color', 'black');
-  });
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(gotPos, geoFail);
+// Update button text based on visibility
+function updateButtonText() {
+  if (is2036Visible) {
+    toggleButton.html("Present Day"); // Text when 2036 is visible
   } else {
-    console.log("Geolocation not supported.");
+    toggleButton.html("Our Planet's Future"); // Text when 2036 is not visible
   }
+}
+
+// Expand on hover (text grows leftward), only if 2036 is not visible
+toggleButton.mouseOver(() => {
+  if (!is2036Visible) {  // Only change to "2035 Predictions" if 2036 is NOT visible
+    toggleButton.html("2035 Predictions");
+  }
+  toggleButton.style('background-color', '#ffffff');
+  toggleButton.style('color', '#000000');
+});
+
+// Collapse back
+toggleButton.mouseOut(() => {
+  updateButtonText(); // Update button text based on visibility
+  toggleButton.style('padding', '5px 12px');
+  toggleButton.style('background-color', '#FFFDE4');
+  toggleButton.style('color', 'black');
+});
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(gotPos, geoFail);
+} else {
+  console.log("Geolocation not supported.");
+}
+
+// Call this function whenever `is2036Visible` changes
+function toggle2036() {
+  is2036Visible = !is2036Visible; // Toggle visibility
+  updateButtonText(); // Update button text when visibility changes
+}
+
 }
 
 function toggle2036() {
