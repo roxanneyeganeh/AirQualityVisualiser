@@ -324,15 +324,12 @@ if (navigator.geolocation) {
 function toggle2036() {
   is2036Visible = !is2036Visible; // Toggle visibility
   updateButtonText(); // Update button text when visibility changes
-}
-
-}
-
-function toggle2036() {
-  is2036Visible = !is2036Visible;
-  setupPills();        // <--- ADD THIS LINE to update pill values
+    setupPills();        // <--- ADD THIS LINE to update pill values
   setupParticles();    // Reset particle system when toggled
 }
+}
+
+
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
